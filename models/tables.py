@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 db.define_table( "fellow", Field('name', label='שם פרטי + ומשפחה'), format='%(name)s')
-db.define_table( "parashot", Field('name', label='פרשה'), Field('parash', 'datetime',label='זמן'), format='%(name)s')
+db.define_table( "parashot", Field('name', label='פרשה'), Field('parash', 'datetime',label='זמן'), Field('image', 'upload'), format='%(name)s')
 db.define_table( "tfila", Field('name', label='תפילה'), format='%(name)s')
 db.define_table( "person", Field('name'))
 
