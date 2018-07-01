@@ -49,9 +49,11 @@ def _():
     # useful links to internal and external resources
     # ------------------------------------------------------------------------------------------------------------------
     response.menu = [
+        (T('admin'), False, URL('shavetzion', 'appadmin', 'index')),
+        (T('מתפללים'), False, URL('shavetzion', 'default', 'edit_fellow')),
+        (T('פרשה'), False, URL('shavetzion', 'default', 'show_parashot')),
         (T('מתפלל'), False, URL('shavetzion', 'default', 'show_fellow')),
         (T('דף סיכום'), False, URL('shavetzion', 'default', 'daf_sicum')),
-        (T('פרשה'), False, URL('shavetzion', 'default', 'show_parashot'))
     ]
 
 

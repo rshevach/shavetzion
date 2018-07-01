@@ -435,3 +435,9 @@
 [2018-06-26 19:27:20] EDIT shavetzion/controllers/default.py: 2
 [2018-06-26 19:28:26] EDIT shavetzion/controllers/default.py: 0
 [2018-06-26 19:33:25] EDIT shavetzion/controllers/default.py: 0
+[2018-07-01 15:33:05] EDIT shavetzion/controllers/default.py: 3
+[2018-07-01 15:33:34] CREATE default/edit_fellow.html: 0
+[2018-07-01 15:34:29] EDIT shavetzion/views/default/edit_fellow.html: 0
+[2018-07-01 16:10:42] EDIT shavetzion/views/default/edit_fellow.html: 2
+[2018-07-01 18:40:47] EDIT shavetzion/models/menu.py: 2
+[2018-07-01 18:41:15] EDIT shavetzion/models/menu.py: 0

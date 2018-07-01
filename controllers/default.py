@@ -33,6 +33,10 @@ def show_fellow():
     form = None #SQLFORM.smartgrid( db.fellow)
     return locals()
 
+def edit_fellow():
+    form = SQLFORM.smartgrid(db.fellow)
+    return locals()
+
 def mitpalel():
     form = SQLFORM.factory(db.fellow)
     return locals()
