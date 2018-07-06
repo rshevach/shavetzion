@@ -105,7 +105,7 @@ def daf_sicum():
     dd = []
     l = len(s)/2
     for i in range(l):
-        dd.append(s[i]+s[l+1+i])
+        dd.append(s[i]+s[l+i])
     if len(s)%2 == 1:
         dd.append(s[len(s)/2] + [" "," "])
     parashot_rows = db(db.parashot).select(orderby=db.parashot.parash)
