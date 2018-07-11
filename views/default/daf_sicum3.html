@@ -19,16 +19,19 @@ tr:nth-child(even) {
 </head>
 <center>
     <h1 dir="rtl">סיכום עד פרשת 
-    <p>{{=last_parasha}}</p>
+    {{=last_parasha}}
         </h1>
     <table dir="rtl" >
         <tr>
           <th>שם</th>
           <th>סכום</th>
-          <th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;הערות&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+          <th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;הערות&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
           <th>שם</th>
           <th>סכום</th>
-          <th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;הערות&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+          <th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;הערות&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+          <th>שם</th>
+          <th>סכום</th>
+          <th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;הערות&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
         </tr>
      {{for row in dd:}}
         <tr >
@@ -37,6 +40,9 @@ tr:nth-child(even) {
          <td>         </td>
          <td >{{=row[2]}}</td>
          <td dir="ltr" >{{=row[3]}}</td>
+         <td>         </td>
+         <td >{{=row[4]}}</td>
+         <td dir="ltr" >{{=row[5]}}</td>
          <td>         </td>
         </tr>
       {{pass}}

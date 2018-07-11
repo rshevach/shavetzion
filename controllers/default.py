@@ -98,10 +98,13 @@ def fellow_bill(f_id):
     return str(summation)
 
 def daf_sicum():
+    all_debt = 0
     rows = db(db.fellow).select(orderby=db.fellow.name)
     s = []
     for row in rows:
-        s.append([row.name,fellow_bill(row.id)])
+        f_bill = fellow_bill(row.id)
+        all_debt = all_debt + int(f_bill)
+        s.append([row.name,f_bill])
     dd = []
     l = len(s)/2
     for i in range(l):
@@ -110,6 +113,28 @@ def daf_sicum():
         dd.append(s[len(s)/2] + [" "," "])
     parashot_rows = db(db.parashot).select(orderby=db.parashot.parash)
     last_parasha = parashot_rows[len(parashot_rows)-1].name
+    str_all_debt = str(all_debt)
+    return locals()
+
+def daf_sicum3():
+    all_debt = 0
+    rows = db(db.fellow).select(orderby=db.fellow.name)
+    s = []
+    for row in rows:
+        f_bill = fellow_bill(row.id)
+        all_debt = all_debt + int(f_bill)
+        s.append([row.name,f_bill])
+    dd = []
+    l = len(s)/3
+    for i in range(l):
+        dd.append(s[i]+s[l+i]+s[2*l+i])
+    if len(s)%3 == 1:
+        dd.append(s[len(s)/3] + [" "," "])
+    if len(s)%3 == 2:
+        dd.append(s[len(s)/3] + s[len(s)/3+1] + [" "])
+    parashot_rows = db(db.parashot).select(orderby=db.parashot.parash)
+    last_parasha = parashot_rows[len(parashot_rows)-1].name
+    str_all_debt = str(all_debt)
     return locals()
 
 def user():
