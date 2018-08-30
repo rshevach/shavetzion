@@ -25,7 +25,12 @@ def show():
     return locals()
 
 def show_parashot():
-    form = SQLFORM.smartgrid( db.parashot) #, fields = [db.parashot.name, db.parashot.parash, db.parashot.image])
+    db.parashot.id.readable = False
+    db.neder.id.readable = False
+    form = SQLFORM.smartgrid( db.parashot,
+                              editable  = auth.has_membership('managers'),
+                              deletable = auth.has_membership('managers')
+                            ) #, fields = [db.parashot.name, db.parashot.parash, db.parashot.image])
     return locals()
 
 def show_fellow():
@@ -34,7 +39,10 @@ def show_fellow():
     return locals()
 
 def edit_fellow():
-    form = SQLFORM.smartgrid(db.fellow)
+    db.fellow.id.readable = False
+    form = SQLFORM.smartgrid(db.fellow,
+                             editable = auth.has_membership('managers'),
+                             deletable = auth.has_membership('managers'))
     return locals()
 
 def mitpalel():
@@ -65,6 +73,7 @@ def bill():
     txt = txt + "<th>חובה</th>"
     txt = txt + "<th>זכות</th>"
     txt = txt + "<th>יתרה</th>"
+    txt = txt + "<th>הערה</th>"
     txt = txt + "</tr>"
     itra = 0
     for row in rows:
@@ -78,6 +87,10 @@ def bill():
         txt = txt + "<td>" + row.debit + "</td>"
         txt = txt + "<td>" + row.credit + "</td>"
         txt = txt + "<td dir='ltr'>" + str(int(itra)) + "</td>"
+        if row.comment != None:
+            txt = txt + "<td dir='ltr'>" + row.comment + "</td>"
+        else:
+            txt = txt + "<td dir='ltr'></td>"
         txt = txt + "</tr>"
     txt = txt + "</table>"
     txt = txt + "<p>"
@@ -108,7 +121,7 @@ def daf_sicum():
     dd = []
     l = len(s)/2
     for i in range(l):
-        dd.append(s[i]+s[l+i])
+        dd.append(s[i]+s[l+i+1])
     if len(s)%2 == 1:
         dd.append(s[len(s)/2] + [" "," "])
     parashot_rows = db(db.parashot).select(orderby=db.parashot.parash)
@@ -127,11 +140,11 @@ def daf_sicum3():
     dd = []
     l = len(s)/3
     for i in range(l):
-        dd.append(s[i]+s[l+i]+s[2*l+i])
+        dd.append(s[i]+s[l+i+1]+s[2*l+i+1])
     if len(s)%3 == 1:
-        dd.append(s[len(s)/3] + [" "," "])
+        dd.append(s[len(s)/3] + [" "," ", " "] + [" "," ", " "])
     if len(s)%3 == 2:
-        dd.append(s[len(s)/3] + s[len(s)/3+1] + [" "])
+        dd.append(s[len(s)/3] + s[len(s)/3+1] + [" "," ", " "])
     parashot_rows = db(db.parashot).select(orderby=db.parashot.parash)
     last_parasha = parashot_rows[len(parashot_rows)-1].name
     str_all_debt = str(all_debt)

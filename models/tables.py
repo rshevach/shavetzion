@@ -11,6 +11,9 @@ db.define_table( "neder",
                 Field('tefila', 'reference tfila', label='תפילה'),
                 Field('parasha', 'reference parashot', label='פרשה'),
                 Field('debit', label='חוב'),
-                Field('credit', label='זכות'))
+                Field('credit', label='זכות'),
+                Field('comment', label='הערה'),
+                auth.signature
+               )
 db.neder._singular ='נדר'
 db.neder._plural='נדרים'

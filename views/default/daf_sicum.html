@@ -18,9 +18,10 @@ tr:nth-child(even) {
 </style>
 </head>
 <center>
+    <img src="{{=URL('static','images/up_logo.jpeg')}}" width="800px" />
     <h1 dir="rtl">סיכום עד פרשת 
-    <p>{{=last_parasha}}</p>
-        </h1>
+       {{=last_parasha}}
+    </h1>
     <table dir="rtl" >
         <tr>
           <th>שם</th>
@@ -44,8 +45,10 @@ tr:nth-child(even) {
     <p>
         <h1 >
      {{=str_all_debt}}    :החוב הכללי הוא
-        </h1>
+        </h1>     
     </p>
+</p>
+    <img src="{{=URL('static','images/down_logo.jpeg')}}" width="800px" />
 </center>
     <script>n =  new Date();
 y = n.getFullYear();
