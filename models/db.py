@@ -76,11 +76,20 @@ auth.define_tables(username=False, signature=False)
 # configure email
 # -------------------------------------------------------------------------
 mail = auth.settings.mailer
-mail.settings.server = 'logging' if request.is_local else myconf.get('smtp.server')
-mail.settings.sender = myconf.get('smtp.sender')
-mail.settings.login = myconf.get('smtp.login')
-mail.settings.tls = myconf.get('smtp.tls') or False
-mail.settings.ssl = myconf.get('smtp.ssl') or False
+#mail.settings.server = 'logging' if request.is_local else myconf.get('smtp.server')
+#mail.settings.sender = myconf.get('smtp.sender')
+#mail.settings.login = myconf.get('smtp.login')
+#mail.settings.tls = myconf.get('smtp.tls') or False
+#mail.settings.ssl = myconf.get('smtp.ssl') or False
+mail.settings.server = 'smtp.gmail.com:587'
+#mail.settings.login = 'logging'
+mail.settings.login = 'shave.tzion@gmail.com:obypmfreesnobrwo'
+#mail.settings.login = 'shave.tzion@gmail.com:Bat10ron'
+mail.settings.sender = 'shave.tzion@gmail.com'
+#mail.settings.sender = 'מרכז קהילתי - שבי ציון'
+#mail.settings.tls = False
+#mail.settings.ssl = False
+
 
 # -------------------------------------------------------------------------
 # configure auth policy
