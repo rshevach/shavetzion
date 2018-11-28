@@ -118,12 +118,12 @@ def daf_sicum():
         f_bill = fellow_bill(row.id)
         all_debt = all_debt + int(f_bill)
         s.append([row.name,f_bill])
+    if len(s)%2 == 1:
+        s.append([" "," "])
     dd = []
     l = len(s)/2
     for i in range(l):
-        dd.append(s[i]+s[l+i+1])
-    if len(s)%2 == 1:
-        dd.append(s[len(s)/2] + [" "," "])
+        dd.append(s[i]+s[l+i])
     parashot_rows = db(db.parashot).select(orderby=db.parashot.parash)
     last_parasha = parashot_rows[len(parashot_rows)-1].name
     str_all_debt = str(all_debt)
@@ -137,14 +137,14 @@ def daf_sicum3():
         f_bill = fellow_bill(row.id)
         all_debt = all_debt + int(f_bill)
         s.append([row.name,f_bill])
+    if len(s)%3 == 1:
+        s.append([" "," ", " "])
+    if len(s)%3 == 2:
+        s.append([" "," ", " "])
     dd = []
     l = len(s)/3
     for i in range(l):
-        dd.append(s[i]+s[l+i+1]+s[2*l+i+1])
-    if len(s)%3 == 1:
-        dd.append(s[len(s)/3] + [" "," ", " "] + [" "," ", " "])
-    if len(s)%3 == 2:
-        dd.append(s[len(s)/3] + s[len(s)/3+1] + [" "," ", " "])
+        dd.append(s[i]+s[l+i]+s[2*l+i])
     parashot_rows = db(db.parashot).select(orderby=db.parashot.parash)
     last_parasha = parashot_rows[len(parashot_rows)-1].name
     str_all_debt = str(all_debt)
