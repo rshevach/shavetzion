@@ -76,23 +76,26 @@ def bill():
     txt = txt + "<th>הערה</th>"
     txt = txt + "</tr>"
     itra = 0
+    txt_lines = ''
     for row in rows:
+        txt_line = ''
         p = db.parashot[row.parasha]
         t = db.tfila[row.tefila]
         itra = itra - validCast(row.debit) + validCast(row.credit)
-        txt = txt + "<tr>"
-        txt = txt + "<td dir='ltr'>" + str(p.parash.strftime("%d-%m-%y")) + "</td>"
-        txt = txt + "<td>" + str(p.name) + "</td>"
-        txt = txt + "<td>" + str(t.name) + "</td>"
-        txt = txt + "<td>" + row.debit + "</td>"
-        txt = txt + "<td>" + row.credit + "</td>"
-        txt = txt + "<td dir='ltr'>" + str(int(itra)) + "</td>"
+        txt_line = txt_line + "<tr>"
+        txt_line = txt_line + "<td dir='ltr'>" + str(p.parash.strftime("%d-%m-%y")) + "</td>"
+        txt_line = txt_line + "<td>" + str(p.name) + "</td>"
+        txt_line = txt_line + "<td>" + str(t.name) + "</td>"
+        txt_line = txt_line + "<td>" + row.debit + "</td>"
+        txt_line = txt_line + "<td>" + row.credit + "</td>"
+        txt_line = txt_line + "<td dir='ltr'>" + str(int(itra)) + "</td>"
         if row.comment != None:
-            txt = txt + "<td dir='ltr'>" + row.comment + "</td>"
+            txt_line = txt_line + "<td dir='ltr'>" + row.comment + "</td>"
         else:
-            txt = txt + "<td dir='ltr'></td>"
-        txt = txt + "</tr>"
-    txt = txt + "</table>"
+            txt_line = txt_line + "<td dir='ltr'></td>"
+        txt_line = txt_line + "</tr>"
+        txt_lines = txt_line + txt_lines
+    txt = txt + txt_lines + "</table>"
     txt = txt + "<p>"
     summation = sum(cre)-sum(deb)
     if summation == int(summation):
