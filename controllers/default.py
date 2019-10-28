@@ -153,6 +153,29 @@ def daf_sicum3():
     str_all_debt = str(all_debt)
     return locals()
 
+def daf_sicum4():
+    all_debt = 0
+    rows = db(db.fellow).select(orderby=db.fellow.name)
+    s = []
+    for row in rows:
+        f_bill = fellow_bill(row.id)
+        all_debt = all_debt + int(f_bill)
+        s.append([row.name,f_bill])
+    if len(s)%4 == 1:
+        s.append([" "," ", " ", " "])
+    if len(s)%4 == 2:
+        s.append([" "," ", " ", " "])
+    if len(s)%4 == 3:
+        s.append([" "," ", " ", " "])
+    dd = []
+    l = len(s)/4
+    for i in range(l):
+        dd.append(s[i]+s[l+i]+s[2*l+i]+s[3*l+i])
+    parashot_rows = db(db.parashot).select(orderby=db.parashot.parash)
+    last_parasha = parashot_rows[len(parashot_rows)-1].name
+    str_all_debt = str(all_debt)
+    return locals()
+
 def user():
     """
     exposes:

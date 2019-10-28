@@ -62,6 +62,7 @@ def _():
              [
                 (T('שתי עמודות'), False, URL('shavetzion', 'default', 'daf_sicum')),
                 (T('שלוש עמודות'), False, URL('shavetzion', 'default', 'daf_sicum3')),
+                (T('ארבע עמודות'), False, URL('shavetzion', 'default', 'daf_sicum4')),
              ]
         ),
     ]

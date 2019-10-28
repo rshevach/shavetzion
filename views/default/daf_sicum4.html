@@ -33,9 +33,12 @@ tr:nth-child(even) {
           <th>שם</th>
           <th>סכום</th>
           <th>&nbsp;&nbsp;הערות&nbsp;&nbsp;</th>
+          <th>שם</th>
+          <th>סכום</th>
+          <th>&nbsp;&nbsp;הערות&nbsp;&nbsp;</th>
         </tr>
      {{for row in dd:}}
-        <tr >
+        <tr height="0">
          <td >{{=row[0]}}</td>
          <td dir="ltr">{{=row[1]}}</td>
          <td>         </td>
@@ -44,6 +47,9 @@ tr:nth-child(even) {
          <td>         </td>
          <td >{{=row[4]}}</td>
          <td dir="ltr" >{{=row[5]}}</td>
+         <td>         </td>
+         <td >{{=row[6]}}</td>
+         <td dir="ltr" >{{=row[7]}}</td>
          <td>         </td>
         </tr>
       {{pass}}
