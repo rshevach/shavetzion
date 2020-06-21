@@ -50,20 +50,20 @@ def _():
     # ------------------------------------------------------------------------------------------------------------------
     response.menu = [
         (
-            T('Admin'), False, URL('mekorhaim', 'appadmin', 'index'),
+            T('Admin'), False, URL('tiferetbahurim', 'appadmin', 'index'),
              [
-                (T('עריכת מתפלל'), False, URL('mekorhaim', 'default', 'edit_fellow')),
-                (T('עריכת פרשה'), False, URL('mekorhaim', 'default', 'show_parashot')),
-                (T('עריכת תפילה'), False, URL('mekorhaim', 'default', 'show_tfila')),
+                (T('עריכת מתפלל'), False, URL('tiferetbahurim', 'default', 'edit_fellow')),
+                (T('עריכת פרשה'), False, URL('tiferetbahurim', 'default', 'show_parashot')),
+                (T('עריכת תפילה'), False, URL('tiferetbahurim', 'default', 'show_tfila')),
              ]
         ),
-        (T('מתפלל'), False, URL('mekorhaim', 'default', 'show_fellow')),
+        (T('מתפלל'), False, URL('tiferetbahurim', 'default', 'show_fellow')),
         (
-            T('דף סיכום'), False, URL('mekorhaim', 'default', 'daf_sicum'),
+            T('דף סיכום'), False, URL('tiferetbahurim', 'default', 'daf_sicum'),
              [
-                (T('שתי עמודות'), False, URL('mekorhaim', 'default', 'daf_sicum')),
-                (T('שלוש עמודות'), False, URL('mekorhaim', 'default', 'daf_sicum3')),
-                (T('ארבע עמודות'), False, URL('mekorhaim', 'default', 'daf_sicum4')),
+                (T('שתי עמודות'), False, URL('tiferetbahurim', 'default', 'daf_sicum')),
+                (T('שלוש עמודות'), False, URL('tiferetbahurim', 'default', 'daf_sicum3')),
+                (T('ארבע עמודות'), False, URL('tiferetbahurim', 'default', 'daf_sicum4')),
              ]
         ),
     ]
