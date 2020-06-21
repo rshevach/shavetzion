@@ -83,10 +83,10 @@ mail = auth.settings.mailer
 #mail.settings.ssl = myconf.get('smtp.ssl') or False
 mail.settings.server = 'smtp.gmail.com:587'
 #mail.settings.login = 'logging'
-mail.settings.login = 'shave.tzion@gmail.com:obypmfreesnobrwo'
+mail.settings.login = 'mekor.haim.netanya@gmail.com:obypmfreesnobrwo'
 #mail.settings.login = 'shave.tzion@gmail.com:Bat10ron'
-mail.settings.sender = 'shave.tzion@gmail.com'
-#mail.settings.sender = 'מרכז קהילתי - שבי ציון'
+mail.settings.sender = 'mekor.haim.netanya@gmail.com'
+#mail.settings.sender = 'מרכז קהילתי - מקור חיים'
 #mail.settings.tls = False
 #mail.settings.ssl = False
 

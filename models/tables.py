@@ -10,8 +10,8 @@ db.define_table( "neder",
                 Field('name', 'reference fellow', label='שם'),
                 Field('tefila', 'reference tfila', label='תפילה'),
                 Field('parasha', 'reference parashot', label='פרשה'),
-                Field('debit', label='חוב'),
-                Field('credit', label='זכות'),
+                Field('debit', 'integer', label='חוב'),
+                Field('credit', 'integer', label='זכות'),
                 Field('comment', label='הערה'),
                 auth.signature
                )
