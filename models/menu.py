@@ -50,20 +50,20 @@ def _():
     # ------------------------------------------------------------------------------------------------------------------
     response.menu = [
         (
-            T('Admin'), False, URL('tiferetbahurim', 'appadmin', 'index'),
+            T('Admin'), False, URL('ohelshem', 'appadmin', 'index'),
              [
-                (T('עריכת מתפלל'), False, URL('tiferetbahurim', 'default', 'edit_fellow')),
-                (T('עריכת פרשה'), False, URL('tiferetbahurim', 'default', 'show_parashot')),
-                (T('עריכת תפילה'), False, URL('tiferetbahurim', 'default', 'show_tfila')),
+                (T('עריכת מתפלל'), False, URL('ohelshem', 'default', 'edit_fellow')),
+                (T('עריכת פרשה'), False, URL('ohelshem', 'default', 'show_parashot')),
+                (T('עריכת תפילה'), False, URL('ohelshem', 'default', 'show_tfila')),
              ]
         ),
-        (T('מתפלל'), False, URL('tiferetbahurim', 'default', 'show_fellow')),
+        (T('מתפלל'), False, URL('ohelshem', 'default', 'show_fellow')),
         (
-            T('דף סיכום'), False, URL('tiferetbahurim', 'default', 'daf_sicum'),
+            T('דף סיכום'), False, URL('ohelshem', 'default', 'daf_sicum'),
              [
-                (T('שתי עמודות'), False, URL('tiferetbahurim', 'default', 'daf_sicum')),
-                (T('שלוש עמודות'), False, URL('tiferetbahurim', 'default', 'daf_sicum3')),
-                (T('ארבע עמודות'), False, URL('tiferetbahurim', 'default', 'daf_sicum4')),
+                (T('שתי עמודות'), False, URL('ohelshem', 'default', 'daf_sicum')),
+                (T('שלוש עמודות'), False, URL('ohelshem', 'default', 'daf_sicum3')),
+                (T('ארבע עמודות'), False, URL('ohelshem', 'default', 'daf_sicum4')),
              ]
         ),
     ]
